@@ -41,7 +41,7 @@ public class PaymentController {
         return ResponseEntity.created(path).body(payment);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<PaymentDTO> update(@PathVariable @NotNull Long id, @RequestBody @Valid PaymentDTO dto) {
         PaymentDTO updatedPayment = paymentService.update(id, dto);
 
